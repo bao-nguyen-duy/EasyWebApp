@@ -30,6 +30,7 @@ else
     app.UseHttpsRedirection();
 }
 
+app.UsePathBase("/");
 app.UseStaticFiles();
 
 app.UseRouting();
