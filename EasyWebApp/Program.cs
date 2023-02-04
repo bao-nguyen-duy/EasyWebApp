@@ -3,6 +3,8 @@ using Microsoft.AspNetCore.HttpOverrides;
 
 var builder = WebApplication.CreateBuilder(args);
 
+builder.WebHost.UseStaticWebAssets();
+
 // Add services to the container.
 builder.Services.Configure<ForwardedHeadersOptions>(options =>
 {
@@ -30,7 +32,6 @@ else
     app.UseHttpsRedirection();
 }
 
-app.UsePathBase("/");
 app.UseStaticFiles();
 
 app.UseRouting();
